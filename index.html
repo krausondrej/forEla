@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Růžová stránka</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffcce7; /* světle růžová */
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      position: relative;
+      overflow: hidden;
+      cursor: url('cursor.png'), url('pointer.png'), pointer;
+    }
+
+    .start-button {
+      background-color: #ff69b4; /* tmavší růžová */
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ffb6c1;
+      transition: all 0.3s ease;
+      z-index: 5;
+    }
+
+    .start-button:hover {
+      background-color: #ff85c1;
+      transform: scale(1.05);
+    }
+
+    .content {
+      display: none;
+      text-align: center;
+      color: #ff69b4;
+      z-index: 10;
+      position: relative;
+    }
+
+    .gif-top-left {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 37%;
+      height: auto;
+      z-index: 1; /* pod textem */
+    }
+
+    .gif-bottom-right {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 37%;
+      height: auto;
+      z-index: 1; /* pod textem */
+    }
+
+    h1 {
+      font-size: 3em;
+      text-shadow: 0 0 10px #ffb6c1;
+      animation: fadeIn 1.5s ease-in-out;
+      position: relative;
+      z-index: 10; /* text vždy nad gifem */
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <button class="start-button" onclick="showContent()">klikni na mě :p</button>
+
+  <div class="content" id="content">
+    <h1>CAUKO ELISKO ILYYY &lt;3333333</h1>
+
+    <img src="catone.gif" alt="Gif vlevo nahoře" class="gif-top-left">
+    <img src="cattwo.gif" alt="Gif vpravo dole" class="gif-bottom-right">
+  </div>
+
+  <script>
+    function showContent() {
+      document.querySelector('.start-button').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
